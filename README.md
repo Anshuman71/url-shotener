@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Url Shortener
 
-## Getting Started
+Use this button for one-click
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAnshuman71%2Furl-shotener)
 
-First, run the development server:
+## Set up environment
+```
+./.env.local
 
-```bash
-npm run dev
-# or
-yarn dev
+DB_NAME=url-shortner
+ATLAS_URI_PROD=mongodb+srv://<user>:<password><cluster>.mongodb.net/url-shortner?retryWrites=true&w=majority
+
+API_KEY=<a-long-random-string>
+HOST=http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+These environment variables should also be stored in your Vercel project.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+> The value of `HOST` should be set to your domain when you host this project. If you don't have a public domain, just you `NEXT_PUBLIC_VERCEL_URL` environment variable instead of `HOST`.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Hosting
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Hosting this project is a piece of cake because Next.js integration with Vercel is excellent. 
 
-## Learn More
+A simplified list of steps:
+1. Push your Next.js project to a GitHub repository
+2. Go to https://vercel.app and login with your GitHub account
+3. Import the `url-shortener` repository by clicking on "New Project" button on Vercel dashboard.
 
-To learn more about Next.js, take a look at the following resources:
+You can also read about this in details [here](https://vercel.com/docs/concepts/projects/overview).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Once done with the above steps, head to project settings and add the environment variables we defined in our `.env.local` file to the Vercel project's environment variables.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+> You can also connect your custom domain to this project from the settings. 
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+🎉 Tada! Your url-shortner is ready and hosted now.
